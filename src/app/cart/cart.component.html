@@ -1,0 +1,40 @@
+<div  class="cart-container ">
+    <div class="  cart-item-details  cart-item">
+<ul>
+   <li  *ngFor="let item of cart" class=" cart-item-details" (change)="valuechange(item)">
+    <img src={{item.url}} alt="{{item.name}}"  >
+
+    <label  id="{{item.id}}">{{item.name}}</label>
+    <label>${{item.price}}</label>
+
+    <input type="number" value="{{item.amount}}" class="number-input" [(ngModel)]="item.amount">
+
+
+   </li> 
+</ul>
+
+<label>Total</label>
+<label >${{total}}</label>
+
+
+
+
+</div>
+<div class="cart-panel">
+  
+    <form  #form ="ngForm" class="form-margin"  (change)="Confirmation()">
+    <label>Full Name</label>
+    <textarea name="username" required minlength="3" [(ngModel)]="username" placeholder="mimimum 3 characters"></textarea>
+    <label>Address</label>
+    <textarea  name="address"  required minlength="6"[(ngModel)]="address"  placeholder="mimimum 6 characters"></textarea>
+    <label>Credit Card Number</label>
+    <textarea name="creditcardnumber"   required minlength="16" [(ngModel)]="creditcardnumber" placeholder="16 digit number"></textarea>
+    <p>we will never your payments with anyone else</p>
+
+    <button type="submit" [disabled]="form.invalid" routerLink='/confirmation' >Submit</button>
+
+</form>
+</div>
+
+
+</div>

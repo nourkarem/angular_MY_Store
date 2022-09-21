@@ -1,0 +1,40 @@
+<div class ="detail-container" >
+
+
+  
+    <img   src={{productItemdetailed.url}} alt="Book">
+    <div class="detail-item">
+    <label >{{productItemdetailed.name}}</label>
+    <br>
+   
+    <label >${{productItemdetailed.price}}</label>
+    <br>
+
+<label >{{productItemdetailed.description}}</label>
+<br>
+
+    <form class="select-input  " (ngSubmit)="addtoCart(productItemdetailed)">
+
+      <select name ="counts" [(ngModel)]="Counts" >
+        <option value="1" selected>1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      
+      </select> 
+      <br>
+
+      <button   type="submit"  >Add to Cart</button>
+      </form>
+   <br>
+   
+<a    class="back-link  " routerLink="/">Back To Products list</a>
+
+</div>
+</div>

@@ -1,0 +1,10 @@
+<div class="product-index product-container">
+  
+    <app-product-item *ngFor="let product of Products" [Product]="product" (imagClicked)="detailedView($event)" >
+
+
+    </app-product-item>
+    
+</div>
+
+
