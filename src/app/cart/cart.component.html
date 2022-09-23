@@ -22,13 +22,13 @@
 </div>
 <div class="cart-panel">
   
-    <form  #form ="ngForm" class="form-margin"  (change)="Confirmation()">
+    <form  #form ="ngForm" class="form-margin"  >
     <label>Full Name</label>
-    <textarea name="username" required minlength="3" [(ngModel)]="username" placeholder="mimimum 3 characters"></textarea>
+    <textarea name="username" required minlength="3" [(ngModel)]="username"  (ngModelChange)="usernameChanged($event)" placeholder="mimimum 3 characters"></textarea>
     <label>Address</label>
-    <textarea  name="address"  required minlength="6"[(ngModel)]="address"  placeholder="mimimum 6 characters"></textarea>
+    <textarea  name="address"  required minlength="6"[(ngModel)]="address"   (ngModelChange)="addressChanged($event)" placeholder="mimimum 6 characters"></textarea>
     <label>Credit Card Number</label>
-    <textarea name="creditcardnumber"   required minlength="16" [(ngModel)]="creditcardnumber" placeholder="16 digit number"></textarea>
+    <textarea name="creditcardnumber"    required   pattern="[0-9]{16}" minlength="16" maxlength="16" [(ngModel)]="creditcardnumber"  (ngModelChange)="creditcardnumberChanged($event)" placeholder="16 digit number"></textarea>
     <p>we will never your payments with anyone else</p>
 
     <button type="submit" [disabled]="form.invalid" routerLink='/confirmation' >Submit</button>

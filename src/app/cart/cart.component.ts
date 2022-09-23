@@ -50,6 +50,19 @@ export class CartComponent implements OnInit {
  
 
   }
+  usernameChanged(event :string)
+  {
+    this.userdataservice.username=this.username;
+  }
+  addressChanged(event :string)
+  {
+    this.userdataservice.address=this.address;
+  }
+  creditcardnumberChanged(event :string)
+  {
+    this.userdataservice.cardnumber=this.creditcardnumber;
+  }
+  /*
   Confirmation()
   {  
        this.userdataservice.username=this.username;
@@ -58,5 +71,5 @@ export class CartComponent implements OnInit {
 
        
   }
-
+*/
 }
